@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Health : MonoBehaviour
 {
@@ -19,10 +20,12 @@ public class Health : MonoBehaviour
         lives = 2;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        if (lives == 0)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
     }
 
     public void updateHealth(int up)

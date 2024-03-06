@@ -8,7 +8,6 @@ public class Enemy : MonoBehaviour
     private GameObject health;
     private Rigidbody2D rb;
     private float moveSpeed = 3f;
-    private Vector2 direction;
     private bool pingPongMovement = true;
     private float currentX;
     public float rightMost;
@@ -19,7 +18,6 @@ public class Enemy : MonoBehaviour
     {
         health = GameObject.FindGameObjectWithTag("Lives");
         rb = gameObject.GetComponent<Rigidbody2D>();
-        direction = Vector2.right;
     }
 
     // Update is called once per frame
