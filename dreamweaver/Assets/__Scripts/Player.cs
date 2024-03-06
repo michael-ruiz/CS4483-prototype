@@ -4,17 +4,16 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    protected Rigidbody2D rb;
-    protected float jumpPower;
-    protected float moveSpeed;
-    protected float jumpCoolDown;
+    private Rigidbody2D rb;
+    private float jumpPower;
+    private float moveSpeed;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = gameObject.GetComponent<Rigidbody2D>();
         jumpPower = 12;
-        moveSpeed = 4;
+        moveSpeed = 5;
     }
 
     // Update is called once per frame
@@ -34,7 +33,5 @@ public class Player : MonoBehaviour
         {
             rb.transform.Translate(Vector2.left * moveSpeed * Time.fixedDeltaTime);
         }
-
-        jumpCoolDown += Time.fixedDeltaTime;
     }
 }

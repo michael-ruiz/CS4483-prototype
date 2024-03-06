@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class Health : MonoBehaviour
 {
-    protected Image img;
-    protected int lives;
+    private int lives;
+    private Image img;
     public Sprite life1;
     public Sprite life2;
     public Sprite life3;
@@ -22,14 +22,25 @@ public class Health : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.V))
-        {
-            lives += 1;
-            updateSprite();
-        }        
+        
     }
 
-    void updateSprite()
+    public void updateHealth(int up)
+    {
+        if (up == 0)
+        {
+            lives -= 1;
+        }
+
+        if (up == 1)
+        {
+            lives += 1;
+        }
+        
+        updateSprite();
+    }
+
+    public void updateSprite()
     {
         if (lives == 1)
         {
